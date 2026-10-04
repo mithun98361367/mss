@@ -340,7 +340,7 @@ body {
    MOBILE
 ===================================================== */
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
 
     .header {
 
@@ -711,7 +711,17 @@ body {
             type="button"
             onclick="openPage('admin', this)">
 
-            🛠️ Admin
+            🛠️ Tracker Admin
+
+        </button>
+		
+		 <!-- Dynamic forms -->
+
+        <button
+            type="button"
+            onclick="openPage('dynamic', this)">
+
+            🛠️ Dynamic forms
 
         </button>
 
@@ -750,7 +760,7 @@ body {
             <div class="section-heading">
 
                 <h2>
-                    What We Can Build For You
+                    Demo Dashboard
                 </h2>
 
                 <p>
@@ -772,17 +782,15 @@ body {
                 <div class="service-card">
 
                     <div class="service-icon">
-                        📦
+                        🎫
                     </div>
 
                     <h3>
-                        Assets / Store Management
+                         MVS
                     </h3>
 
                     <p>
-                        Track assets, inventory, stores,
-                        stock movements and business
-                        resources from one centralized system.
+                        Service management solutions for ticket handling, engineer assignment, customer requests, service schedules, status tracking and complete ticket lifecycle management.
                     </p>
 					
 					<button
@@ -790,7 +798,7 @@ body {
                     type="button"
                     onclick="openPage('mvs', null)">
 
-                   🧑 View MVS Demo
+                   🎫 View MVS Demo
 
                    </button>
 
@@ -802,7 +810,7 @@ body {
                 <div class="service-card">
 
                     <div class="service-icon">
-                        📍
+                        🕒
                     </div>
 
                     <h3>
@@ -810,9 +818,7 @@ body {
                     </h3>
 
                     <p>
-                        Employee attendance, punch in/out,
-                        location tracking, history and
-                        attendance reporting.
+                        Smart attendance solutions for employee check-in/check-out, GPS-based attendance, working hours, attendance history and real-time workforce monitoring.
                     </p>
 					
 					<button
@@ -820,7 +826,7 @@ body {
                     type="button"
                     onclick="openPage('inout', this)">
 
-                   🧑 View Attendance Demo
+                   🕒 View Attendance Demo
 
                    </button>
 
@@ -832,25 +838,25 @@ body {
                 <div class="service-card">
 
                     <div class="service-icon">
-                        👥
+                        📍
                     </div>
 
                     <h3>
-                        HRMS
+                        Location Tracker
                     </h3>
 
                     <p>
-                        Human resource management solutions
-                        for employee information, attendance,
-                        leave and business administration.
+                      Real-time location tracking solutions for employee GPS monitoring, attendance, field movement, location-based check-in/check-out and workforce management.
+
                     </p>
 					
+				
 					<button
                     class="btn btn-full"
                     type="button"
                     onclick="openPage('tracker', this)">
 
-                   🧑 View Location Traker Demo
+                   📍 Location Traker Demo
 
                    </button>
 
@@ -862,18 +868,25 @@ body {
                 <div class="service-card">
 
                     <div class="service-icon">
-                        💳
+                        📝
                     </div>
 
                     <h3>
-                        Billing Management
+                         Dynamic Form
                     </h3>
 
                     <p>
-                        Manage billing, invoices, customers
-                        and business transactions through
-                        an easy-to-use application.
+                        Flexible form solutions that automatically create and manage fields, dropdowns, dependent fields, validation, file uploads and data collection based on configurable settings.
                     </p>
+					
+					<button
+                    class="btn btn-full"
+                    type="button"
+                    onclick="openPage('dynamic', this)">
+
+                   📝 Dynamic form Demo
+
+                   </button>
 
                 </div>
 
@@ -981,66 +994,10 @@ body {
                 </div>
 
 
-                <!-- 10 -->
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        📋
-                    </div>
-
-                    <h3>
-                        Business Directory
-                    </h3>
-
-                    <p>
-                        Business listing and directory
-                        platforms for organizing services,
-                        companies and contact information.
-                    </p>
-
-                </div>
+                  
 
 
-                <!-- 11 -->
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🌐
-                    </div>
-
-                    <h3>
-                        Web Design
-                    </h3>
-
-                    <p>
-                        Professional, responsive websites
-                        optimized for desktop, tablet and
-                        mobile devices.
-                    </p>
-
-                </div>
-
-
-                <!-- 12 -->
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        ☁️
-                    </div>
-
-                    <h3>
-                        Hosting & Deployment
-                    </h3>
-
-                    <p>
-                        Website deployment and hosting
-                        solutions for your online presence.
-                    </p>
-
-                </div>
+              
 
 
             </div>
@@ -1073,7 +1030,7 @@ body {
 ===================================================== */
 
 const APP_URL =
-"https://script.google.com/macros/s/AKfycby2uLha-AAkXBoEv7QlvRugE1cRj81Uv3CBt8N4BIVzgt4SMb9zkL7noU0UjzNnebi3/exec";
+"https://script.google.com/macros/s/AKfycbxQwHzru8dY_2qULpFr7qSpX6S8Zznxfos3laz1J_naDVoszUx9swmRorpG3q4tSajV/exec";
 
 
 const APP_URL2 =
@@ -1082,6 +1039,9 @@ const APP_URL2 =
 
 const APP_URL3 =
 "https://script.google.com/macros/s/AKfycbzyB2Oog05ZAQ9Fd0XC1-YOveU5ZKKfYv8r-AGO-R-HDmMuV8nhYgekPSeTHXRElKRfCA/exec";
+
+const APP_URL4 =
+"https://script.google.com/macros/s/AKfycbxKkYh305YpPZBfY1cw_KIixUDVyBEq_B8sV1JWkvQZ0iR1iie0O2SZPeWXWFXmuSRYOQ/exec";
 
 
 /* =====================================================
@@ -1212,17 +1172,17 @@ function openPage(page, button) {
 
 
     /* =================================================
-       HOME DASHBOARD BUTTONS
+       Dynamic forms
     ================================================= */
 
-    else if (page === "spare") {
+    else if (page === "dynamic") {
 
         /*
          * Change this URL if Spare has
          * a separate Apps Script.
          */
 
-        url = APP_URL;
+        url = APP_URL4;
 
     }
 
