@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-   content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-   content="MSS Web Solutions">
-
-<title>MSS WEB SOLUTIONS</title>
+  <title>Engineer Application</title>
 
   <style>
     * {
@@ -31,12 +26,7 @@
       align-items: center;
       gap: 8px;
       padding: 8px 12px;
-      background: 
-	   linear-gradient(
-            135deg,
-            #ffd052,
-            #e8ae2f
-        );
+      background: #1a73e8;
     }
 
     .menu button {
@@ -81,62 +71,6 @@
     min-height: 100vh !important;
 }
 
-
-
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background: #f5f7fb;
-    color: #172033;
-
-    overflow: hidden;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.header {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 74px;
-
-    z-index: 1000;
-
-    background:
-        rgba(255,255,255,.97);
-
-    border-bottom:
-        1px solid #e7eaf0;
-
-    box-shadow:
-        0 3px 18px rgba(15,23,42,.08);
-}
-
-
   </style>
 </head>
 
@@ -144,16 +78,23 @@ body {
 
   <div class="menu">
 
-   <!-- MSS WEB SOLUTIONS -->
-<button
-    class="active"
-    onclick="window.location.href='index.html'">
+    <button
+      class="active"
+      onclick="openPage('home', this)">
+      🏠 Home
+    </button>
 
-    🏠 MSS WEB SOLUTIONS
+    <button
+      onclick="openPage('report', this)">
+      📊 Pivot & Chart Report
+    </button>
 
-</button>
+    <button
+      onclick="openPage('upload', this)">
+      📈 Upload Excel
+    </button>
+	
 
-   
   </div>
 
   <div class="content">
@@ -161,13 +102,71 @@ body {
     <iframe
       id="appFrame"
       allow="geolocation; camera; microphone"
-      src="https://script.google.com/macros/s/AKfycbxQwHzru8dY_2qULpFr7qSpX6S8Zznxfos3laz1J_naDVoszUx9swmRorpG3q4tSajV/exec">
+      src="https://script.google.com/macros/s/AKfycbwmshUIHsspCk_lP9PsaOYf2XmxmUbWJ0NuutS69vBZC08IZjBhJ0mOA3oTGBlxYTJs/exec">
     </iframe>
 
   </div>
 
   <script>
 
+    /* GOOGLE APPS SCRIPT URLS */
+
+    const APP_URL =
+      "https://script.google.com/macros/s/AKfycbwmshUIHsspCk_lP9PsaOYf2XmxmUbWJ0NuutS69vBZC08IZjBhJ0mOA3oTGBlxYTJs/exec";
+
+    const APP_URL2 =
+      "https://script.google.com/macros/s/AKfycbxXA4w-zhbu8YufoxJaA1e5o8w9FoexbzCSQ-9C9x5IFQBfUGc2QxlH4vFZ0dMHqTi5/exec";
+
+    const APP_URL3 =
+      "https://script.google.com/macros/s/AKfycbzyB2Oog05ZAQ9Fd0XC1-YOveU5ZKKfYv8r-AGO-R-HDmMuV8nhYgekPSeTHXRElKRfCA/exec";
+
+
+    /* OPEN PAGE */
+
+    function openPage(page, button) {
+
+      const frame =
+        document.getElementById("appFrame");
+
+      let url = APP_URL;
+
+
+      /* HOME */
+
+      if (page === "home") {
+        url = APP_URL;
+      }
+
+
+      
+      /* ADMIN */
+
+      else if (page === "report") {
+        url = APP_URL + "?page=report";
+      }
+	  
+	   else if (page === "upload") {
+        url = APP_URL + "?page=upload";
+      }
+
+
+      /* LOAD IFRAME */
+
+      frame.src = url;
+
+
+      /* ACTIVE MENU */
+
+      document
+        .querySelectorAll(".menu button")
+        .forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+
+      button.classList.add("active");
+
+    }
   </script>
 
 </body>
