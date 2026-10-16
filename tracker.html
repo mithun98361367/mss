@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Location Tracker</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* MENU */
+    .menu {
+      height: 55px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #1a73e8;
+    }
+
+    .menu button {
+      border: none;
+      background: transparent;
+      color: white;
+      padding: 10px 16px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .menu button:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .menu button.active {
+      background: white;
+      color: #1a73e8;
+    }
+
+    /* CONTENT */
+    .content {
+      height: calc(100vh - 55px);
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+	
+#footer,
+.wsite-footer {
+    display: none !important;
+}
+
+#main {
+    min-height: 100vh !important;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="menu">
+
+    <button
+      class="active"
+      onclick="openPage('home', this)">
+      🏠 Home
+    </button>
+
+    <button
+      onclick="openPage('direction', this)">
+      📊 Location Directions
+    </button>
+
+    <button
+      onclick="openPage('admin', this)">
+      📈 Admin
+    </button>
+	
+
+  </div>
+
+  <div class="content">
+
+    <iframe
+      id="appFrame"
+      allow="geolocation; camera; microphone"
+      src="https://script.google.com/macros/s/AKfycbzixV8lqMWWcYv_GxpEU6EizEYuBHvHhQy5MUUILg1RtlAH-qUVCpi8I0tPgKPxZfg1PQ/exec">
+    </iframe>
+
+  </div>
+
+  <script>
+
+    /* GOOGLE APPS SCRIPT URLS */
+
+    const APP_URL =
+      "https://script.google.com/macros/s/AKfycbzixV8lqMWWcYv_GxpEU6EizEYuBHvHhQy5MUUILg1RtlAH-qUVCpi8I0tPgKPxZfg1PQ/exec";
+
+    const APP_URL2 =
+      "https://script.google.com/macros/s/AKfycbxXA4w-zhbu8YufoxJaA1e5o8w9FoexbzCSQ-9C9x5IFQBfUGc2QxlH4vFZ0dMHqTi5/exec";
+
+    /* OPEN PAGE */
+
+    function openPage(page, button) {
+
+      const frame =
+        document.getElementById("appFrame");
+
+      let url = APP_URL;
+
+
+      /* HOME */
+
+      if (page === "home") {
+        url = APP_URL;
+      }
+
+
+      
+      /* ADMIN */
+
+      else if (page === "direction") {
+        url = APP_URL + "?page=direction";
+      }
+	  
+	   else if (page === "admin") {
+        url = APP_URL + "?page=admin";
+      }
+
+
+      /* LOAD IFRAME */
+
+      frame.src = url;
+
+
+      /* ACTIVE MENU */
+
+      document
+        .querySelectorAll(".menu button")
+        .forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+
+      button.classList.add("active");
+
+    }
+  </script>
+
+</body>
+</html>
