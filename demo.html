@@ -894,7 +894,7 @@ body {
     <a
         href="javascript:void(0)"
         class="logo"
-        onclick="showHome()">
+        onclick="window.location.href='index.html'">
 
         MSS <span>WEB SOLUTIONS</span>
 
@@ -906,16 +906,6 @@ body {
     <nav
         id="mainNav"
         class="nav">
-
- <!-- HOME -->
-<button
-    class="active"
-    onclick="window.location.href='index.html'">
-
-    🏠 Home
-
-</button>
-
 
         <!-- Dashboard -->
 
@@ -940,39 +930,7 @@ body {
 
         </button>
 
-
-        <!-- IN / OUT -->
-
-        <button
-            type="button"
-            onclick="openPage('inout', this)">
-
-            🗺️ In / Out
-
-        </button>
-
-
-        <!-- TRACKER -->
-
-        <button
-            type="button"
-            onclick="openPage('tracker', this)">
-
-            📍 Tracker
-
-        </button>
-
-
-        <!-- ADMIN -->
-
-        <button
-            type="button"
-            onclick="openPage('admin', this)">
-
-            🛠️ Tracker Admin
-
-        </button>
-		
+       
 		 <!-- Dynamic forms -->
 
         <button
@@ -1054,7 +1012,7 @@ body {
 					<button
                     class="btn btn-full"
                     type="button"
-                    onclick="openPage('mvs', null)">
+                    onclick="window.location.href='mvs.html'">
 
                    🎫 View MVS Demo
 
@@ -1082,7 +1040,7 @@ body {
 					<button
                     class="btn btn-full"
                     type="button"
-                    onclick="openPage('inout', this)">
+                    onclick="window.location.href='attendance.html'">
 
                    🕒 View Attendance Demo
 
@@ -1112,8 +1070,8 @@ body {
 					<button
                     class="btn btn-full"
                     type="button"
-                    onclick="openPage('tracker', this)">
-
+					onclick="window.location.href='tracker.html'">
+                    
                    📍 Location Traker Demo
 
                    </button>
