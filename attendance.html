@@ -881,52 +881,46 @@ body {
 ===================================================== -->
 
 <header class="header">
-
-
 <div class="nav-container">
-
-
     <!-- LOGO -->
-
     <a
         href="javascript:void(0)"
         class="logo"
         onclick="window.location.href='index.html'">
-
         MSS <span>WEB SOLUTIONS</span>
-
     </a>
-
-
     <!-- NAVIGATION -->
-
     <nav
         id="mainNav"
         class="nav">
 
-  <button
+ <button
         onclick="window.location.href='demo.html'">
        📊 Dashboard
     </button>
-	
-	
 	 <button
       class="active"
       onclick="openPage('home', this)">
-      📍 Location tracker
+      📍 Punch In Out
     </button>
 
     <button
-      onclick="openPage('direction', this)">
-      📊 Location Directions
+      onclick="openPage('calendar', this)">
+      📊 Calendar
     </button>
 
+
+<button
+      onclick="openPage('report', this)">
+      📊 Reports
+    </button>
+	
+	
     <button
       onclick="openPage('admin', this)">
       📈 Admin
     </button>
-	
-	   
+   
     </nav>
 
 
@@ -971,7 +965,7 @@ body {
 
 <script>
 const APP_URL =
-  "https://script.google.com/macros/s/AKfycbyELdpjlykxauUAQ7qUMy3iVSzuADtWpfjAKT4zgLZzQ3L1xblcBMGpve08fmB9aols/exec";
+  "https://script.google.com/macros/s/AKfycbyLRukCYL7UkYI_7ap2aBu7eBjaYY4T1sDQJQ0TmVjqHNM-3bbSrbFpkKcf2byrITVq/exec";
 
 const frame = document.getElementById("appFrame");
 const container = document.getElementById("appContainer");
@@ -988,13 +982,19 @@ function openPage(page, button) {
             url = APP_URL;
             break;
 
-        case "direction":
-            url = APP_URL + "?page=direction";
+        case "calendar":
+            url = APP_URL + "?page=calendar";
             break;
+
+        case "report":
+            url = APP_URL + "?page=report";
+            break;
+
 
         case "admin":
             url = APP_URL + "?page=admin";
             break;
+			
 
         default:
             return;
