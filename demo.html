@@ -929,6 +929,14 @@ body {
             👨‍🔧 MVS
 
         </button>
+		
+		 <button
+            type="button"
+            onclick="openPage('ticket', this)">
+
+            👨‍🔧 Ticket
+
+        </button>
 
        
 		 <!-- Dynamic forms -->
@@ -1019,6 +1027,39 @@ body {
                    </button>
 
                 </div>
+
+
+
+<div class="service-card">
+
+    <div class="service-icon">
+        🎫
+    </div>
+
+    <h3>
+        Ticket Management
+    </h3>
+
+    <p>
+        Complete ticketing and service management solution for
+        ticket tracking, engineer assignment, customer requests,
+        attendance date management, call reports, closure remarks,
+        priority management and real-time ticket status monitoring.
+    </p>
+
+    <button
+        class="btn btn-full"
+        type="button"
+       	onclick="openPage('ticket', this)">
+
+        🎫 Ticket Management Demo
+
+    </button>
+
+</div>
+
+
+
 
 
                 <!-- 2 -->
@@ -1249,14 +1290,10 @@ const APP_URL =
 "https://script.google.com/macros/s/AKfycbxQwHzru8dY_2qULpFr7qSpX6S8Zznxfos3laz1J_naDVoszUx9swmRorpG3q4tSajV/exec";
 
 
-const APP_URL2 =
-"https://script.google.com/macros/s/AKfycbxXA4w-zhbu8YufoxJaA1e5o8w9FoexbzCSQ-9C9x5IFQBfUGc2QxlH4vFZ0dMHqTi5/exec";
-
-
 const APP_URL3 =
-"https://script.google.com/macros/s/AKfycbzyB2Oog05ZAQ9Fd0XC1-YOveU5ZKKfYv8r-AGO-R-HDmMuV8nhYgekPSeTHXRElKRfCA/exec";
+"https://script.google.com/macros/s/AKfycbwLb70Ey3I1RGG_9PbAe3nNfwTvGeD-0OMePVWLBlpiq6hK69gqabvLP6XFWCJ_hidi/exec";
 
-const APP_URL4 =
+const APP_URL2 =
 "https://script.google.com/macros/s/AKfycbyxkgMYT5RzxGGDTPmGSTt0U06gTRsEcN37eKiiwT7f3nGiPRO0wo8zYRwQBwIcxGnlDw/exec";
 
 
@@ -1353,41 +1390,6 @@ function openPage(page, button) {
 
 
     /* =================================================
-       IN / OUT
-    ================================================= */
-
-    else if (page === "inout") {
-
-        url = APP_URL2;
-
-    }
-
-
-    /* =================================================
-       TRACKER
-    ================================================= */
-
-    else if (page === "tracker") {
-
-        url = APP_URL3;
-
-    }
-
-
-    /* =================================================
-       ADMIN
-    ================================================= */
-
-    else if (page === "admin") {
-
-        url =
-            APP_URL3 +
-            "?page=admin";
-
-    }
-
-
-    /* =================================================
        Dynamic forms
     ================================================= */
 
@@ -1398,19 +1400,22 @@ function openPage(page, button) {
          * a separate Apps Script.
          */
 
-        url = APP_URL4;
+        url = APP_URL2;
 
     }
+	
+	 /* =================================================
+       Dynamic forms
+    ================================================= */
 
-
-    else if (page === "calendar") {
+    else if (page === "ticket") {
 
         /*
-         * Change this URL if Calendar has
+         * Change this URL if Spare has
          * a separate Apps Script.
          */
 
-        url = APP_URL;
+        url = APP_URL3;
 
     }
 
